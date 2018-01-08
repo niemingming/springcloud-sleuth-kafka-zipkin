@@ -1,0 +1,22 @@
+#配置kafka
+spring:
+  sleuth:
+    enabled: false
+    sampler:
+      percentage: 1.0
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zkNodes: localhost:2181
+  #ES配置
+zipkin:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      host: localhost:9200
+      cluster: elasticsearch
+      index: zipkin
+      index-shards: 1
+      index-replicas: 1
